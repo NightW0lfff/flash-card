@@ -1,0 +1,19 @@
+.btn {
+  background-color: $--btn-color;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  box-shadow: 0.6rem 0.8rem 2rem rgba(black, 0.2);
+  transition: all 0.3s ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: translateY(-0.18rem) scale(1.03);
+    outline: 4px solid white;
+    outline-offset: 0.2rem;
+  }
+
+  &:active {
+    transform: translateY(-0.05rem);
+    outline: none;
+  }
+}

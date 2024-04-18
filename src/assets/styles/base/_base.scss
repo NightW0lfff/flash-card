@@ -1,0 +1,15 @@
+.html {
+  font-size: 62.5%; // 10px
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  // background-color: aquamarine;
+  background-image: linear-gradient(
+    to bottom right,
+    $--secondary-color,
+    $--primary-color,
+    $--tertiary-color
+  );
+}

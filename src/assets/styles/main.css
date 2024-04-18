@@ -1,0 +1,127 @@
+@import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
+@import "./../fonts/icons/fontawesome-free-6.5.2-web/css/all.css";
+*,
+*::before,
+*::after {
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande", "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  line-height: 1.7;
+  color: #f8f8f8;
+}
+
+.header__title {
+  font-size: 1.8rem;
+  font-weight: 600;
+  font-family: "Macondo", Tahoma, Geneva, Verdana, sans-serif;
+  font-style: italic;
+}
+.header__title span {
+  font-style: normal;
+}
+.header__btn {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.class__left_item--count-val {
+  color: #fabe0d;
+  font-size: 2.5rem;
+}
+
+.html {
+  font-size: 62.5%;
+}
+
+.main {
+  height: 100vh;
+  width: 100vw;
+  background-image: linear-gradient(to bottom right, #2d8ccb, #6dd5fa, #9bbac5);
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+.btn {
+  background-color: #fabe0d;
+  padding: 0.8rem;
+  border-radius: 0.4rem;
+  box-shadow: 0.6rem 0.8rem 2rem rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease;
+}
+.btn:hover {
+  cursor: pointer;
+  transform: translateY(-0.18rem) scale(1.03);
+  outline: 4px solid white;
+  outline-offset: 0.2rem;
+}
+.btn:active {
+  transform: translateY(-0.05rem);
+  outline: none;
+}
+
+.class__container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+.class__left_item {
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 1.5rem;
+}
+.class__left_item--container {
+  height: 100%;
+  border-radius: 1rem 0 0 1rem;
+  background-color: #fabe0d;
+  padding: 0 1.2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.class__left_item--title {
+  color: #444;
+}
+.class__left_item--count {
+  width: 5rem;
+  height: 5rem;
+  background-color: #fff;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.class__right_item {
+  width: 6rem;
+  height: 100%;
+  border-radius: 0 1rem 1rem 0;
+  background-color: aquamarine;
+  display: flex;
+}
+.class__right_item--icon {
+  font-size: 1rem;
+  color: black;
+}
+
+.header {
+  padding: 2rem 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.class {
+  width: 80%;
+  min-width: 35rem;
+  height: 8rem;
+  margin: 3rem auto;
+  border-radius: 1rem;
+  box-shadow: 0.8rem 1rem 2rem rgba(0, 0, 0, 0.1);
+  background-color: #f8f8f8;
+}/*# sourceMappingURL=main.css.map */
