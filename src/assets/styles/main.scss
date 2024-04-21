@@ -10,8 +10,10 @@
 @import "./components/classItem";
 
 @import "./layouts/header";
-@import "./layouts/section";
+@import "./layouts/card";
 
 // IMPORT FONT
 @import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
-@import "./../fonts/icons/fontawesome-free-6.5.2-web/css/all.css";
+
+// IMPORT ICON
+@import "../fonts/icons/Font-awesome/css/all.css";

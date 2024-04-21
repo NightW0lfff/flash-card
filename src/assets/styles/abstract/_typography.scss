@@ -1,6 +1,8 @@
-*,
-*::before,
-*::after {
+html {
+  font-size: 62.5%; // 10px
+}
+
+body {
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
   line-height: 1.7;
@@ -9,9 +11,9 @@
 
 .header {
   &__title {
-    font-size: 1.8rem;
+    font-size: 4rem;
     font-weight: 600;
-    font-family: "Macondo", Tahoma, Geneva, Verdana, sans-serif;
+    font-family: $--header-font;
     font-style: italic;
 
     & span {
@@ -20,12 +22,27 @@
   }
 
   &__btn {
+    font-size: 1.8rem;
     font-weight: 600;
     text-transform: uppercase;
   }
 }
 
-.class__left_item--count-val {
-  color: $--btn-color;
-  font-size: 2.5rem;
+.class {
+  &__left_item {
+    &--count-val {
+      color: $--btn-color;
+      font-size: 2.5rem;
+      font-family: $--header-font;
+    }
+    &--title {
+      color: $--font-color-dark;
+    }
+  }
+  &__right_item {
+    &--icon {
+      font-size: 1.6rem;
+      color: $--font-color-dark;
+    }
+  }
 }

@@ -1,12 +1,12 @@
 import React from "react";
 import Header from "../layouts/Header";
-import CardContainer from "../layouts/CardContainer";
+import Card from "../layouts/CardContainer";
 
 function Home() {
   return (
     <div className="main">
       <Header />
-      <CardContainer />
+      <Card />
     </div>
   );
 }

@@ -1,12 +1,12 @@
 import React from "react";
 import ClassItem from "../components/ClassItem";
 
-function CardContainer() {
+function Card() {
   return (
-    <section className="class">
+    <div className="card">
       <ClassItem />
-    </section>
+    </div>
   );
 }
 
-export default CardContainer;
+export default Card;
