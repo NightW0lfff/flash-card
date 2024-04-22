@@ -71,8 +71,7 @@ body {
 }
 
 .class {
-  width: -moz-fit-content;
-  width: fit-content;
+  width: 40vw;
   min-width: 40rem;
   height: 8rem;
   border-radius: 1rem;
@@ -99,8 +98,8 @@ body {
 }
 .class__left_item--title {
   cursor: default;
-  max-width: 40vw;
-  overflow: scroll;
+  max-width: 20vw;
+  overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -143,4 +142,7 @@ body {
   margin-top: 4rem;
   display: flex;
   justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 2rem;
 }/*# sourceMappingURL=main.css.map */

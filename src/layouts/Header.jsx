@@ -6,7 +6,7 @@ function Header() {
       <h1 className="header__title">
         baoanh.owl <span>🦉</span>
       </h1>
-      <btn className="btn header__btn">Add Section</btn>
+      <button className="btn header__btn">Add Section</button>
     </div>
   );
 }

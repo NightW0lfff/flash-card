@@ -1,5 +1,5 @@
 .class {
-  width: fit-content;
+  width: 40vw;
   min-width: 40rem;
   height: 8rem;
   border-radius: 1rem;
@@ -29,8 +29,8 @@
 
     &--title {
       cursor: default;
-      max-width: 40vw;
-      overflow: scroll;
+      max-width: 20vw;
+      overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
     }
