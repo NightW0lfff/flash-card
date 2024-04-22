@@ -38,6 +38,9 @@ body {
     &--title {
       color: $--font-color-dark;
     }
+    &--input {
+      font-size: 1.6rem;
+    }
   }
   &__right_item {
     &--icon {

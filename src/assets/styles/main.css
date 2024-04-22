@@ -33,6 +33,9 @@ body {
 .class__left_item--title {
   color: #444;
 }
+.class__left_item--input {
+  font-size: 1.6rem;
+}
 .class__right_item--icon {
   font-size: 1.6rem;
   color: #444;
@@ -102,6 +105,10 @@ body {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
+}
+.class__left_item--input {
+  padding: 1rem;
+  background-color: #fff;
 }
 .class__left_item--count {
   cursor: default;

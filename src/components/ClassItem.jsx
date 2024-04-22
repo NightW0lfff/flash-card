@@ -17,10 +17,13 @@ function ClassItem({ key, title, count }) {
         </div>
         {isEditting ? (
           <input
+            className="class__left_item--input"
             type="text"
             defaultValue={title}
+            autoFocus
+            onBlur={(e) => handleEditting()}
             onKeyDownCapture={(e) => {
-              // e.key === "Enter" && handleEditting();
+              e.key === "Enter" && handleEditting();
               // console.log(e.target.value === e.target.defaultValue);
             }}
           />
