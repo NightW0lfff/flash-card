@@ -1,9 +1,11 @@
 .card {
   width: 100vw;
+  height: 80vh;
   margin-top: 4rem;
   display: flex;
-  justify-content: center;
+  // justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-y: auto;
   gap: 2rem;
 }

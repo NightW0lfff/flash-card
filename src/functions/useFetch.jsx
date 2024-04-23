@@ -1,43 +1,37 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 
-function useFetch({ url }) {
+function useFetch(url) {
   const [data, setData] = useState(null);
   const [error, setError] = useState(null);
   const [isLoading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const controller = new AbortController();
-    const signal = controller.signal;
-
+  const fetchData = useCallback(async () => {
     setLoading(true);
     setError(null);
 
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url, { signal });
-        if (!response.ok) {
-          throw new Error(`HTTP error! status: ${response.status}`);
-        }
-        const JSONdata = await response.json();
-        setData(JSONdata);
-      } catch (e) {
-        if (e.name === "AbortError") {
-          console.log("Fetch aborted");
-        } else {
-          setError(e);
-        }
-      } finally {
-        setLoading(false);
+    try {
+      const response = await fetch(url);
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
       }
-    };
+      const JSONdata = await response.json();
+      setData(JSONdata);
+    } catch (e) {
+      setError(e);
+    } finally {
+      setLoading(false);
+    }
+  }, [url]);
+
+  useEffect(() => {
     fetchData();
+  }, [fetchData]);
 
-    return () => {
-      controller.abort();
-    };
-  }, [url]); // Dependencies array includes url to re-run fetchData when URL changes
+  const refetch = useCallback(() => {
+    fetchData();
+  }, [fetchData]);
 
-  return { data, error, isLoading };
+  return { data, error, isLoading, refetch };
 }
 
 export default useFetch;

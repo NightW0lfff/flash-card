@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  text-decoration: none;
+}
+
 html {
   font-size: 62.5%; // 10px
 }
@@ -25,6 +31,7 @@ body {
     font-size: 1.8rem;
     font-weight: 600;
     text-transform: uppercase;
+    color: $--font-color-light;
   }
 }
 
@@ -47,5 +54,33 @@ body {
       font-size: 1.6rem;
       color: $--font-color-dark;
     }
+  }
+}
+
+.card_form {
+  color: $--font-color-dark;
+
+  &__title {
+    font-size: 2.5rem;
+    color: $--font-color-light;
+  }
+
+  &__input {
+    font-size: 1.8rem;
+  }
+}
+
+.btn--form {
+  font-size: 2rem;
+  font-weight: 600;
+  color: $--font-color-light;
+
+  &:hover {
+    outline: 4px solid $--primary-color !important;
+    outline-offset: 0.2rem;
+  }
+
+  &:active {
+    outline: none !important;
   }
 }

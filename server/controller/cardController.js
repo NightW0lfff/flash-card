@@ -7,7 +7,7 @@ exports.getAllCards = async (req, res) => {
     res.status(200).json({
       status: "success",
       results: cards.length,
-      data: { cards },
+      cards,
     });
   } catch (err) {
     res.status(404).json({
@@ -23,7 +23,7 @@ exports.getCard = async (req, res) => {
 
     res.status(200).json({
       status: "success",
-      data: { card },
+      card,
     });
   } catch (err) {
     res.status(404).json({
@@ -39,7 +39,7 @@ exports.createCard = async (req, res) => {
 
     res.status(201).json({
       status: "success",
-      data: { card: newCard },
+      card: newCard,
     });
   } catch (err) {
     res.status(400).json({
@@ -57,7 +57,7 @@ exports.updateCard = async (req, res) => {
     });
     res.status(200).json({
       status: "success",
-      data: { card },
+      card,
     });
   } catch (err) {
     res.status(400).json({

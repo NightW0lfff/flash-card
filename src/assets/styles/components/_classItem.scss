@@ -1,7 +1,8 @@
 .class {
+  cursor: pointer;
   width: 40vw;
   min-width: 40rem;
-  height: 8rem;
+  min-height: 8rem;
   border-radius: 1rem;
   box-shadow: 0.8rem 1rem 2rem rgba(black, 0.1);
   background-color: $--white-color-1;

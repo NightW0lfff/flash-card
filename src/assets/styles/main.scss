@@ -5,10 +5,12 @@
 
 @import "./base/base";
 @import "./base/reset";
+@import "./base/animation";
 
 @import "./components/buttons";
 @import "./components/classItem";
 
+@import "./layouts/cardForm";
 @import "./layouts/header";
 @import "./layouts/card";
 

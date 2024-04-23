@@ -1,5 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");
 @import "../fonts/icons/Font-awesome/css/all.css";
+*,
+*::before,
+*::after {
+  text-decoration: none;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -23,6 +29,7 @@ body {
   font-size: 1.8rem;
   font-weight: 600;
   text-transform: uppercase;
+  color: #f8f8f8;
 }
 
 .class__left_item--count-val {
@@ -41,6 +48,30 @@ body {
   color: #444;
 }
 
+.card_form {
+  color: #444;
+}
+.card_form__title {
+  font-size: 2.5rem;
+  color: #f8f8f8;
+}
+.card_form__input {
+  font-size: 1.8rem;
+}
+
+.btn--form {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #f8f8f8;
+}
+.btn--form:hover {
+  outline: 4px solid #6dd5fa !important;
+  outline-offset: 0.2rem;
+}
+.btn--form:active {
+  outline: none !important;
+}
+
 .main {
   height: 100vh;
   width: 100vw;
@@ -55,9 +86,17 @@ body {
   border: none;
 }
 
+@keyframes zoomOut {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(100%);
+  }
+}
 .btn {
   background-color: #fabe0d;
-  padding: 0.8rem;
+  padding: 1.2rem;
   border-radius: 0.4rem;
   box-shadow: 0.6rem 0.8rem 2rem rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease;
@@ -74,9 +113,10 @@ body {
 }
 
 .class {
+  cursor: pointer;
   width: 40vw;
   min-width: 40rem;
-  height: 8rem;
+  min-height: 8rem;
   border-radius: 1rem;
   box-shadow: 0.8rem 1rem 2rem rgba(0, 0, 0, 0.1);
   background-color: #f8f8f8;
@@ -134,6 +174,47 @@ body {
   cursor: pointer;
 }
 
+.card_form {
+  position: absolute;
+  width: 40vw;
+  min-width: 40rem;
+  background-color: #fff;
+  z-index: 999;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -150%);
+  border-radius: 1rem;
+  background-image: linear-gradient(to bottom right, #6dd5fa, #9bbac5);
+}
+.card_form__bg {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 899;
+}
+.card_form__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 3rem;
+}
+.card_form__container--btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.card_form__input {
+  width: 90%;
+  height: 2rem;
+  border-radius: 2.5rem;
+  padding: 2rem;
+  background-color: #f8f8f8;
+  outline: none;
+}
+
 .header {
   padding: 2rem 2.5rem;
   display: flex;
@@ -146,10 +227,11 @@ body {
 
 .card {
   width: 100vw;
+  height: 80vh;
   margin-top: 4rem;
   display: flex;
-  justify-content: center;
   align-items: center;
   flex-direction: column;
+  overflow-y: auto;
   gap: 2rem;
 }/*# sourceMappingURL=main.css.map */
