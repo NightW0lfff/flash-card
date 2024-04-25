@@ -254,7 +254,7 @@ body {
   width: 70%;
   border-radius: 2rem;
   padding: 2.5rem;
-  transition: all 2s ease;
+  transition: all 1s ease;
   backface-visibility: hidden;
   perspective: 9999;
 }
@@ -288,7 +288,8 @@ body {
   margin: 0 1rem;
   border-bottom: 0.14rem solid rgba(0, 0, 0, 0.8);
 }
-.card__main--header--container-btn {
+.card__main--header-btn {
+  cursor: pointer;
   display: flex;
   gap: 4rem;
 }
@@ -301,7 +302,7 @@ body {
   z-index: 999;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -150%);
+  transform: translate(-50%, -100%);
   border-radius: 1rem;
   background-image: linear-gradient(to bottom right, #6dd5fa, #9bbac5);
 }

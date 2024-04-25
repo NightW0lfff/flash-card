@@ -20,7 +20,7 @@
     border-radius: 2rem;
     padding: 2.5rem;
 
-    transition: all 2s ease;
+    transition: all 1s ease;
     backface-visibility: hidden;
     perspective: 9999;
 
@@ -62,7 +62,8 @@
 
       border-bottom: 0.14rem solid rgba($--black-color, 0.8);
 
-      &--container-btn {
+      &-btn {
+        cursor: pointer;
         display: flex;
         gap: 4rem;
       }
