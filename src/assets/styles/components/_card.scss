@@ -20,8 +20,9 @@
     border-radius: 2rem;
     padding: 2.5rem;
 
-    transition: all 4s;
+    transition: all 2s ease;
     backface-visibility: hidden;
+    perspective: 9999;
 
     &-text {
       max-width: 80%;
