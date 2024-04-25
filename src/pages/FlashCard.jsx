@@ -111,9 +111,10 @@ function FlashCard() {
       setCard(data.card);
     }
   }, [data, id, refetch]);
+
   useEffect(() => {
     refetch();
-  }, [curIndex]);
+  }, [curIndex, refetch]);
 
   return (
     <div className="main">
