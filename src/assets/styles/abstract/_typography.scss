@@ -71,7 +71,7 @@ body {
   }
 }
 
-.card {
+.flashcard {
   font-size: 1.6rem;
 
   &__overview {
@@ -81,16 +81,18 @@ body {
     }
   }
 
-  &__content {
-    color: $--font-color-dark;
-    &--header-title {
-      font-weight: 600;
-    }
-  }
-
   &__btn {
     font-size: 6rem;
     line-height: 1;
+  }
+}
+.card {
+  font-size: 1.6rem;
+  color: $--font-color-dark;
+  &__main {
+    &--header-title {
+      font-weight: 600;
+    }
   }
 }
 
@@ -105,7 +107,7 @@ body {
     font-size: 1.8rem;
   }
 
-  &__content {
+  &__main {
     &-speaker {
       font-size: 2.5rem;
     }
