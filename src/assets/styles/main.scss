@@ -10,9 +10,12 @@
 @import "./components/buttons";
 @import "./components/classItem";
 
-@import "./layouts/cardForm";
+@import "./layouts/classForm";
 @import "./layouts/header";
-@import "./layouts/card";
+@import "./layouts/class";
+
+@import "./pages/pageNotFound";
+@import "./pages/flashCard";
 
 // IMPORT FONT
 @import url("https://fonts.googleapis.com/css2?family=Macondo&display=swap");

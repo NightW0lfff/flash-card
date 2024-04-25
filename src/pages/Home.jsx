@@ -1,27 +1,29 @@
 import React, { useEffect, useState } from "react";
 import Header from "../layouts/Header";
-import Card from "../layouts/CardContainer";
-import CardForm from "../layouts/CardForm";
+import Class from "../layouts/Class";
+import ClassForm from "../layouts/ClassForm";
 
 function Home() {
   const [isOpen, setOpen] = useState(false);
-  const [shouldReloadCards, setShouldReloadCards] = useState(false);
+  const [shouldReloadClass, setShouldReloadClass] = useState(false);
 
   useEffect(() => {
-    if (shouldReloadCards) {
-      setShouldReloadCards(false);
+    if (shouldReloadClass) {
+      setShouldReloadClass(false);
     }
-  }, [shouldReloadCards]);
+  }, [shouldReloadClass]);
 
-  const handleCreateCard = () => {
-    setShouldReloadCards(true);
+  const handleCreateClass = () => {
+    setShouldReloadClass(true);
   };
 
   return (
     <div className="main">
-      {isOpen && <CardForm onCreateCard={handleCreateCard} setOpen={setOpen} />}
+      {isOpen && (
+        <ClassForm onCreateClass={handleCreateClass} setOpen={setOpen} />
+      )}
       <Header setOpen={setOpen} />
-      <Card shouldReload={shouldReloadCards} />
+      <Class shouldReload={shouldReloadClass} />
     </div>
   );
 }

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
-function CardForm({ onCreateCard, setOpen }) {
+function ClassForm({ onCreateClass, setOpen }) {
   const [topic, setTopic] = useState(null);
 
   const toggleForm = () => {
     setOpen(false);
   };
 
-  const handleCreateCard = async (data) => {
+  const handleCreateClass = async (data) => {
     if (!data) return;
 
     try {
@@ -21,7 +21,7 @@ function CardForm({ onCreateCard, setOpen }) {
       if (!res.ok) {
         return;
       }
-      onCreateCard();
+      onCreateClass();
       toggleForm();
     } catch (err) {
       throw new Error(err);
@@ -29,27 +29,27 @@ function CardForm({ onCreateCard, setOpen }) {
   };
 
   return (
-    <div className="card_form__bg">
-      <div className="card_form">
-        <div className="card_form__container">
-          <h2 className="card_form__title">What is your new topic?</h2>
+    <div className="class_form__bg">
+      <div className="class_form">
+        <div className="class_form__container">
+          <h2 className="class_form__title">What is your new topic?</h2>
           <input
-            className="card_form__input"
+            className="class_form__input"
             type="text"
             placeholder="Topic"
             onChange={(e) => setTopic(e.target.value)}
             autoFocus
           />
-          <div className="card_form__container--btn">
+          <div className="class_form__container--btn">
             <button
-              className="card_form__btn--cancel btn btn--form"
+              className="class_form__btn--cancel btn btn--form"
               onClick={(e) => toggleForm()}
             >
               Cancel
             </button>
             <button
-              className="card_form__btn--create btn btn--form"
-              onClick={(e) => handleCreateCard(topic)}
+              className="class_form__btn--create btn btn--form"
+              onClick={(e) => handleCreateClass(topic)}
             >
               Create
             </button>
@@ -60,4 +60,4 @@ function CardForm({ onCreateCard, setOpen }) {
   );
 }
 
-export default CardForm;
+export default ClassForm;

@@ -21,6 +21,7 @@ body {
     font-weight: 600;
     font-family: $--header-font;
     font-style: italic;
+    color: $--font-color-light;
 
     & span {
       font-style: normal;
@@ -57,7 +58,7 @@ body {
   }
 }
 
-.card_form {
+.class_form {
   color: $--font-color-dark;
 
   &__title {
@@ -70,17 +71,47 @@ body {
   }
 }
 
-.btn--form {
-  font-size: 2rem;
-  font-weight: 600;
-  color: $--font-color-light;
+.card {
+  font-size: 1.6rem;
 
-  &:hover {
-    outline: 4px solid $--primary-color !important;
-    outline-offset: 0.2rem;
+  &__overview {
+    font-weight: 600;
+    &--total {
+      font-size: 2rem;
+    }
   }
 
-  &:active {
-    outline: none !important;
+  &__content {
+    color: $--font-color-dark;
+    &--header-title {
+      font-weight: 600;
+    }
+  }
+
+  &__btn {
+    font-size: 6rem;
+    line-height: 1;
+  }
+}
+
+.btn {
+  &--form {
+    font-size: 2rem;
+    font-weight: 600;
+    color: $--font-color-light;
+  }
+
+  &__card--header {
+    font-size: 1.8rem;
+  }
+
+  &__content {
+    &-speaker {
+      font-size: 2.5rem;
+    }
+    &-flip {
+      font-size: 2rem;
+      font-weight: 600;
+    }
   }
 }

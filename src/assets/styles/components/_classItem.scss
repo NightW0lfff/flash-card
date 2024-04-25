@@ -57,15 +57,16 @@
   &__right_item {
     width: auto;
     height: 100%;
-    padding: 0 2rem;
+    padding: 0 rem;
     border-radius: 0 1rem 1rem 0;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 2rem;
+    // gap: 2rem;
 
     &--icon {
       cursor: pointer;
+      padding: 1rem;
     }
   }
 }

@@ -17,6 +17,28 @@
     outline: none;
   }
 
-  // &--form {
-  // }
+  &.hidden {
+    display: none;
+  }
+
+  &--form {
+    &:hover {
+      outline: 4px solid $--primary-color !important;
+      outline-offset: 0.2rem;
+    }
+
+    &:active {
+      outline: none !important;
+    }
+  }
+
+  &__content {
+    &-flip {
+      padding: 0.5rem 2rem !important;
+      outline: none !important;
+    }
+  }
+
+  &__arr {
+  }
 }

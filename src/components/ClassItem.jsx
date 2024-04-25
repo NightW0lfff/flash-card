@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function ClassItem({ id, title, count, deleteCard }) {
+function ClassItem({ id, title, count, deleteClass }) {
   const [isEditting, setEditting] = useState(false);
   const [updatedTitle, setTitle] = useState(title);
 
@@ -34,7 +34,9 @@ function ClassItem({ id, title, count, deleteCard }) {
 
   return (
     <>
-      <NavLink className="class" to={`/class?id=${id}`}>
+      {/* <NavLink className="class" to={`/class?id=${id}`}> */}
+
+      <NavLink className="class" to={`/class/${id}`}>
         <div className="class__left_item">
           <div className="class__left_item--container">
             <div className="class__left_item--count">
@@ -68,11 +70,17 @@ function ClassItem({ id, title, count, deleteCard }) {
         <div className="class__right_item">
           <div
             className="class__right_item--icon fa-regular fa-pen-to-square"
-            onClick={(e) => toggleEditMode()}
+            onClick={(e) => {
+              e.preventDefault(); // Prevent default click behaviour
+              toggleEditMode();
+            }}
           />
           <div
             className="class__right_item--icon fa-solid fa-trash"
-            onClick={(e) => deleteCard(id)}
+            onClick={(e) => {
+              e.preventDefault();
+              deleteClass(id);
+            }}
           />
           {/* <div className="class__right_item--icon fa-regular fa-star" />
         <div className="class__right_item--icon fa-solid fa-star" /> */}

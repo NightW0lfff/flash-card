@@ -7,7 +7,7 @@ const cardSchema = new mongoose.Schema({
     unique: true,
     trim: true,
   },
-  card: [
+  cards: [
     {
       question: {
         type: String,
@@ -19,23 +19,23 @@ const cardSchema = new mongoose.Schema({
         required: [true, "Missing answer for card"],
         trim: true,
       },
-      count: [
-        {
-          _id: false,
-          correct: {
-            type: Number,
-            default: 0,
-          },
-          wrong: {
-            type: Number,
-            default: 0,
-          },
-        },
-      ],
-      totalCount: {
-        type: Number,
-        default: 0,
-      },
+      // count: [
+      //   {
+      //     _id: false,
+      //     correct: {
+      //       type: Number,
+      //       default: 0,
+      //     },
+      //     wrong: {
+      //       type: Number,
+      //       default: 0,
+      //     },
+      //   },
+      // ],
+      // totalCount: {
+      //   type: Number,
+      //   default: 0,
+      // },
       createdAt: {
         type: Date,
         default: Date.now(),

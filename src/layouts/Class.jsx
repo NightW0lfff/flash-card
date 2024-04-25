@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import useFetch from "../functions/useFetch";
 import ClassItem from "../components/ClassItem";
 
-function Card({ shouldReload }) {
+function Class({ shouldReload }) {
   const [card, setCard] = useState(null);
 
   const { data, error, isLoading, refetch } = useFetch(
     `http://localhost:8000/api/cards`
   );
 
-  const deleteCard = async (id) => {
+  const deleteClass = async (id) => {
     try {
       const res = await fetch(`http://localhost:8000/api/cards/${id}`, {
         method: "DELETE",
@@ -35,7 +35,7 @@ function Card({ shouldReload }) {
   }, [data, error]);
 
   return (
-    <div className="card">
+    <div className="class__main">
       {isLoading ? (
         <h1>Loading</h1>
       ) : (
@@ -46,8 +46,8 @@ function Card({ shouldReload }) {
             key={data._id}
             id={data._id}
             title={data.title}
-            count={data.card.length}
-            deleteCard={deleteCard}
+            count={data.cards.length}
+            deleteClass={deleteClass}
           />
         ))
       )}
@@ -55,4 +55,4 @@ function Card({ shouldReload }) {
   );
 }
 
-export default Card;
+export default Class;
