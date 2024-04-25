@@ -24,6 +24,9 @@
     backface-visibility: hidden;
     perspective: 9999;
 
+    &--empty {
+      justify-content: center !important;
+    }
     &-text {
       max-width: 80%;
       max-height: 40vh;
@@ -49,7 +52,7 @@
       cursor: pointer;
       position: absolute;
       right: 8%;
-      top: 15%;
+      top: 12%;
     }
 
     &--header {
@@ -66,6 +69,21 @@
         cursor: pointer;
         display: flex;
         gap: 4rem;
+      }
+    }
+
+    &--context {
+      overflow-y: auto;
+      max-width: 90%;
+      max-height: 70%;
+
+      &-input {
+        width: 90%;
+        height: 70%;
+        background-color: $--white-color-1;
+        padding: 1rem;
+        resize: none;
+        outline: none;
       }
     }
   }

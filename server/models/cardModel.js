@@ -11,12 +11,10 @@ const cardSchema = new mongoose.Schema({
     {
       question: {
         type: String,
-        required: [true, "Missing question for card"],
         trim: true,
       },
       answer: {
         type: String,
-        required: [true, "Missing answer for card"],
         trim: true,
       },
       // count: [
