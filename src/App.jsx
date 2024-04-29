@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import FlashCard from "./pages/FlashCard";
-import PageNotFound from "./pages/PageNotFound";
+import Home from "./frontend/pages/Home";
+import FlashCard from "./frontend/pages/FlashCard";
+import PageNotFound from "./frontend/pages/PageNotFound";
 
 function App() {
   return (
