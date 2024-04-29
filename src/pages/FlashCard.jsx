@@ -3,6 +3,7 @@ import Header from "../layouts/Header";
 import { useParams } from "react-router-dom";
 import useFetch from "../functions/useFetch";
 import Card from "../components/Card";
+import Loading from "../layouts/Loading";
 
 function FlashCard() {
   const { id } = useParams();
@@ -119,9 +120,8 @@ function FlashCard() {
   return (
     <div className="main">
       <Header displayButton={"none"} />
-      {/* {error || isLoading ? ( */}
-      {error ? (
-        <h1>Loading...</h1>
+      {!error || !isLoading ? (
+        <Loading />
       ) : (
         <div className="flashcard">
           <div className="flashcard__overview">

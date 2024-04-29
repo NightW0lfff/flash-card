@@ -117,3 +117,11 @@ body {
     }
   }
 }
+
+.loading {
+  &--title {
+    font-size: 5rem;
+    font-family: $--header-font;
+    font-weight: 200;
+  }
+}

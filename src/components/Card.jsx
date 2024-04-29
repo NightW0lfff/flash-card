@@ -13,10 +13,14 @@ function Card({ Card, deleteCard, isEmpty, updateCard }) {
       const voices = synth.getVoices();
       const voice = voices.find(
         (data) =>
-          // data.name === "Google UK English Female" && data.lang === "en-GB"  -- Best for pronouncing Chemical Name
+          // -- Best for pronouncing Chemical Name
+          // data.name === "Google UK English Female" && data.lang === "en-GB"
           data.name === "Catherine" && data.lang === "en-AU"
       );
       setSelectedVoice(voice);
+      console.log(
+        voices.filter((obj) => obj.lang === "en-AU" || obj.lang === "en-US")
+      );
     };
 
     // Call handleVoicesChanged initially
@@ -38,10 +42,11 @@ function Card({ Card, deleteCard, isEmpty, updateCard }) {
   const handleTextSpeak = (value) => {
     // ADD SWITCH TO CONTROL SPEAK STOP, RESET, CONTINUE
     // ADD ICON FOR RESET, STOP(REPLACE THE SPEAKER ICON)
+    if (isEditting) return;
 
     const utterance = new SpeechSynthesisUtterance(value.toLowerCase());
     utterance.voice = selectedVoice; //voice of speaker
-    utterance.rate = 1.15; //speak rate
+    utterance.rate = 1; //speak rate
 
     if (!synth.speaking && !synth.onvoiceschanged) {
       synth.speak(utterance);
@@ -95,7 +100,7 @@ function Card({ Card, deleteCard, isEmpty, updateCard }) {
                 />
                 <div
                   className="card__main--header-btn btn__card--header fa-solid fa-trash"
-                  onClick={(e) => deleteCard(Card._id)}
+                  onClick={(e) => !isEditting && deleteCard(Card._id)}
                 />
               </div>
             </div>
@@ -153,7 +158,7 @@ function Card({ Card, deleteCard, isEmpty, updateCard }) {
                 />
                 <div
                   className="card__main--header-btn btn__card--header fa-solid fa-trash"
-                  onClick={(e) => deleteCard(Card._id)}
+                  onClick={(e) => !isEditting && deleteCard(Card._id)}
                 />
               </div>
             </div>
