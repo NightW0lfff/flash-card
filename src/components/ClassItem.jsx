@@ -34,8 +34,6 @@ function ClassItem({ id, title, count, deleteClass }) {
 
   return (
     <>
-      {/* <NavLink className="class" to={`/class?id=${id}`}> */}
-
       <NavLink className="class" to={`/class/${id}`}>
         <div className="class__left_item">
           <div className="class__left_item--container">

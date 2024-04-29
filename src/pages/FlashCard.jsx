@@ -12,6 +12,7 @@ function FlashCard() {
     cards: [],
   });
   const [curIndex, setCurIndex] = useState(0);
+  const [showLoading, setShowLoading] = useState(false);
 
   const { data, error, isLoading, refetch } = useFetch(
     `http://localhost:8000/api/cards/${id}`
@@ -114,13 +115,26 @@ function FlashCard() {
   }, [data, id, refetch]);
 
   useEffect(() => {
+    if (!isLoading) {
+      setTimeout(() => {
+        console.log("to false");
+        setShowLoading(false);
+      }, 500);
+    }
+    setShowLoading(true);
+    console.log("to true");
+
+    return () => clearTimeout();
+  }, [isLoading]);
+
+  useEffect(() => {
     refetch();
   }, [curIndex, refetch]);
 
   return (
     <div className="main">
       <Header displayButton={"none"} />
-      {!error || !isLoading ? (
+      {error || showLoading ? (
         <Loading />
       ) : (
         <div className="flashcard">
