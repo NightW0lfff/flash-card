@@ -20,10 +20,9 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "server": "nodemon src/server/server.js",
+    "start": "react-scripts start",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts build",
-    "start": "react-scripts start"
+    "build": "react-scripts build"
   },
   "eslintConfig": {
     "extends": [
