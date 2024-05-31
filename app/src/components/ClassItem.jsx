@@ -7,7 +7,7 @@ function ClassItem({ id, title, count, deleteClass }) {
 
   const updateTitle = async (id, data) => {
     try {
-      const res = await fetch(`http://54.252.236.4:8080/api/cards/${id}`, {
+      const res = await fetch(`//54.252.236.4:8080/api/cards/${id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

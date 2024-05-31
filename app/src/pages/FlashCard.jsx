@@ -15,12 +15,12 @@ function FlashCard() {
   const [showLoading, setShowLoading] = useState(false);
 
   const { data, error, isLoading, refetch } = useFetch(
-    `http://54.252.236.4:8080/api/cards/${id}`
+    `//54.252.236.4:8080/api/cards/${id}`
   );
 
   const createCard = async () => {
     try {
-      const res = await fetch(`http://54.252.236.4:8080/api/items/${id}`, {
+      const res = await fetch(`//54.252.236.4:8080/api/items/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -45,19 +45,16 @@ function FlashCard() {
 
   const updateCard = async (itemId, data) => {
     try {
-      const res = await fetch(
-        `http://54.252.236.4:8080/api/items/${id}/${itemId}`,
-        {
-          method: "PATCH",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            question: data.question,
-            answer: data.answer,
-          }),
-        }
-      );
+      const res = await fetch(`//54.252.236.4:8080/api/items/${id}/${itemId}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          question: data.question,
+          answer: data.answer,
+        }),
+      });
       if (!res.ok) {
         return;
       }
@@ -69,12 +66,9 @@ function FlashCard() {
 
   const deleteCard = async (itemId) => {
     try {
-      const res = await fetch(
-        `http://54.252.236.4:8080/api/items/${id}/${itemId}`,
-        {
-          method: "DELETE",
-        }
-      );
+      const res = await fetch(`//54.252.236.4:8080/api/items/${id}/${itemId}`, {
+        method: "DELETE",
+      });
       if (!res.ok) {
         return;
       }
