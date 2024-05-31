@@ -11,7 +11,7 @@ function ClassForm({ onCreateClass, setOpen }) {
     if (!data) return;
 
     try {
-      const res = await fetch(`http://localhost:8000/api/cards/`, {
+      const res = await fetch(`http://54.252.236.4:8080/api/cards/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

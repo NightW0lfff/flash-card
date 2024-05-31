@@ -6,12 +6,12 @@ function Class({ shouldReload }) {
   const [card, setCard] = useState(null);
 
   const { data, error, isLoading, refetch } = useFetch(
-    `http://localhost:8000/api/cards`
+    `http://54.252.236.4:8080/api/cards`
   );
 
   const deleteClass = async (id) => {
     try {
-      const res = await fetch(`http://localhost:8000/api/cards/${id}`, {
+      const res = await fetch(`http://54.252.236.4:8080/api/cards/${id}`, {
         method: "DELETE",
       });
       if (!res.ok) {

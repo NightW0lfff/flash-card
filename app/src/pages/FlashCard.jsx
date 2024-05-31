@@ -15,12 +15,12 @@ function FlashCard() {
   const [showLoading, setShowLoading] = useState(false);
 
   const { data, error, isLoading, refetch } = useFetch(
-    `http://localhost:8000/api/cards/${id}`
+    `http://54.252.236.4:8080/api/cards/${id}`
   );
 
   const createCard = async () => {
     try {
-      const res = await fetch(`http://localhost:8000/api/items/${id}`, {
+      const res = await fetch(`http://54.252.236.4:8080/api/items/${id}`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -46,7 +46,7 @@ function FlashCard() {
   const updateCard = async (itemId, data) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/items/${id}/${itemId}`,
+        `http://54.252.236.4:8080/api/items/${id}/${itemId}`,
         {
           method: "PATCH",
           headers: {
@@ -70,7 +70,7 @@ function FlashCard() {
   const deleteCard = async (itemId) => {
     try {
       const res = await fetch(
-        `http://localhost:8000/api/items/${id}/${itemId}`,
+        `http://54.252.236.4:8080/api/items/${id}/${itemId}`,
         {
           method: "DELETE",
         }
