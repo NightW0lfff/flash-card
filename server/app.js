@@ -7,6 +7,7 @@ const itemRouter = require("./routes/itemRoutes");
 
 app.use(cors());
 
+
 app.use((req, res, next) => {
   res.setHeader("Access-Control-Allow-Origin", "https://nightw0lfff.github.io");
   res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");

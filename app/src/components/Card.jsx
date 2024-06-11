@@ -18,9 +18,9 @@ function Card({ Card, deleteCard, isEmpty, updateCard }) {
           data.name === "Catherine" && data.lang === "en-AU"
       );
       setSelectedVoice(voice);
-      console.log(
-        voices.filter((obj) => obj.lang === "en-AU" || obj.lang === "en-US")
-      );
+      // console.log(
+      //   voices.filter((obj) => obj.lang === "en-AU" || obj.lang === "en-US")
+      // )
     };
 
     // Call handleVoicesChanged initially
@@ -100,7 +100,7 @@ function Card({ Card, deleteCard, isEmpty, updateCard }) {
                 />
                 <div
                   className="card__main--header-btn btn__card--header fa-solid fa-trash"
-                  onClick={(e) => !isEditting && deleteCard(Card._id)}
+                  onClick={(e) => !isEditting && Card && deleteCard(Card._id)}
                 />
               </div>
             </div>
@@ -115,6 +115,7 @@ function Card({ Card, deleteCard, isEmpty, updateCard }) {
                   onKeyDownCapture={(e) => {
                     if (e.key === "Enter") {
                       toggleEditMode();
+                      handleEditting(Card._id);
                     }
                   }}
                 />
@@ -171,8 +172,10 @@ function Card({ Card, deleteCard, isEmpty, updateCard }) {
                   autoFocus
                   onChange={(e) => setAnswer(e.target.value)}
                   onKeyDownCapture={(e) => {
+                    console.log("hit");
                     if (e.key === "Enter") {
                       toggleEditMode();
+                      handleEditting(Card._id);
                     }
                   }}
                 />

@@ -1,35 +1,42 @@
 import React, { useState } from "react";
 import { NavLink } from "react-router-dom";
 
-function ClassItem({ id, title, count, deleteClass }) {
+function ClassItem({ id, title, count, deleteClass, card }) {
   const [isEditting, setEditting] = useState(false);
   const [updatedTitle, setTitle] = useState(title);
 
-  const updateTitle = async (id, data) => {
-    try {
-      const res = await fetch(`//54.252.236.4:8080/api/cards/${id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title: data }),
-      });
-      if (!res.ok) {
-        return;
-      }
+  // const updateTitle = async (id, data) => {
+  //   try {
+  //     const res = await fetch(`//54.252.236.4:8080/api/cards/${id}`, {
+  //       method: "PATCH",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ title: data }),
+  //     });
+  //     if (!res.ok) {
+  //       return;
+  //     }
 
-      setTitle(data);
-    } catch (err) {
-      throw new Error(err);
-    }
-  };
+  //     setTitle(data);
+  //   } catch (err) {
+  //     throw new Error(err);
+  //   }
+  // };
 
   const toggleEditMode = () => {
     setEditting((prev) => !prev);
   };
 
   const handleEditting = (data) => {
-    updateTitle(id, data);
+    // updateTitle(id, data);
+    if (!card || !data) return;
+    if (!card.find((item) => item._id === id)) return;
+    if (card.some((item) => item.title === data)) return;
+
+    card.find((item) => item._id === id).title = data;
+    localStorage.setItem("card", JSON.stringify(card));
+    setTitle(data);
   };
 
   return (

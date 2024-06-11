@@ -7,25 +7,39 @@ function ClassForm({ onCreateClass, setOpen }) {
     setOpen(false);
   };
 
-  const handleCreateClass = async (data) => {
-    if (!data) return;
+  // const handleCreateClass = async (data) => {
+  //   if (!data) return;
 
-    try {
-      const res = await fetch(`//54.252.236.4:8080/api/cards/`, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ title: data }),
-      });
-      if (!res.ok) {
-        return;
-      }
-      onCreateClass();
-      toggleForm();
-    } catch (err) {
-      throw new Error(err);
-    }
+  //   try {
+  //     const res = await fetch(`//54.252.236.4:8080/api/cards/`, {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({ title: data }),
+  //     });
+  //     if (!res.ok) {
+  //       return;
+  //     }
+  //     onCreateClass();
+  //     toggleForm();
+  //   } catch (err) {
+  //     throw new Error(err);
+  //   }
+  // };
+
+  const handleCreateClass = (data) => {
+    if (!data) return;
+    let cur_list = JSON.parse(localStorage.getItem("card"));
+    if (cur_list === null) cur_list = [];
+    cur_list.push({
+      _id: new Date().getTime(),
+      title: data,
+      cards: [],
+    });
+    localStorage.setItem("card", JSON.stringify(cur_list));
+    onCreateClass();
+    toggleForm();
   };
 
   return (
